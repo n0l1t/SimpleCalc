@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "5"
             endingLineNumber = "5"
-            landmarkName = "plus(number1:number2:)"
+            landmarkName = "calcFunc(number1:number2:operand:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
