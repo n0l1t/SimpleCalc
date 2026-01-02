@@ -1,30 +1,31 @@
 import Foundation
 
-public let version:String = "v0.2"
+public let version:String = "v0.31"
 
 func calcFunc(number1:String, number2:String, operand:String) -> Int{
-    switch operand {
-    case "+":
-        if let n1 = Int(number1){
-            if  let n2 = Int(number2){
+    if let n1 = Int(number1){
+        if  let n2 = Int(number2){
+            switch operand {
+            case "+":
                 return n1+n2
-            }else{
-                print("Unexepted error: Check your second number")
-            }
-        }else{
-            print("Unexepted error: Check your first number")
-        }
-    case "-":
-        if let n1 = Int(number1){
-            if  let n2 = Int(number2){
+            case "-":
                 return n1-n2
-            }else{
-                print("Unexepted error: Check your second number")
+            case "*":
+                return n1*n2
+            case "/":
+                if n1 == 0 || n2 == 0{
+                    print("Error: Division by zero")
+                    return 0
+                }else{
+                    return n1/n2
+                }
+            default: print("Unexepted error")
             }
         }else{
-            print("Unexepted error: Check your first number")
+            print("Unexepted error: Check your second number")
         }
-    default: print("Unexepted error")
+    }else{
+        print("Unexepted error: Check your first number")
     }
  return 0
 }
