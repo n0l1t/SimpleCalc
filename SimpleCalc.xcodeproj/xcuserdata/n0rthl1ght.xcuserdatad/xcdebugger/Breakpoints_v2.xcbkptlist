@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C73CBE4-695D-49CC-9FF7-E39056ADEE5E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SimpleCalc/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3B410D6E-6FA0-443D-B258-C7BD579B92C5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -32,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "5"
             endingLineNumber = "5"
-            landmarkName = "calcFunc(number1:number2:operand:)"
+            landmarkName = "calcFunc(_:_:_:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

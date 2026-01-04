@@ -1,43 +1,58 @@
 import Foundation
 
-public let version:String = "v0.31"
+public let version:String = "v0.44"
 
-func calcFunc(number1:String, number2:String, operand:String) -> Int{
-    if let n1 = Int(number1){
-        if  let n2 = Int(number2){
-            switch operand {
-            case "+":
-                return n1+n2
-            case "-":
-                return n1-n2
-            case "*":
-                return n1*n2
-            case "/":
-                if n1 == 0 || n2 == 0{
-                    print("Error: Division by zero")
-                    return 0
-                }else{
-                    return n1/n2
-                }
-            default: print("Unexepted error")
+func calcFunc(_ n1:Int?, _ n2:Int?, _ operand:String) -> Int?{
+    if let n1 = n1, let n2 = n2{
+        switch operand {
+        case "+":
+            return n1+n2
+        case "-":
+            return n1-n2
+        case "*":
+            return n1*n2
+        case "/":
+            if n2 == 0{
+                print("Error: Division by zero")
+                return nil
+            }else{
+                return n1/n2
             }
-        }else{
-            print("Unexepted error: Check your second number")
+        default:
+            print("Unexepted error")
+            return nil
         }
     }else{
-        print("Unexepted error: Check your first number")
+        print("Error: nil")
     }
- return 0
+    return nil
 }
 
-func initicalize() {
-    print("Wellcome to SimpleCalc " + version)
-    print("Select operation type: +, -, *, /")
-    let operandInt:String = readLine() ?? ""
-    print("Furst number:")
+func getValueFromConsole() -> Int?{
+    print("Enter number:")
     let n1:String = readLine() ?? ""
-    print("Second number:")
-    let n2:String = readLine() ?? ""
-    print("Your expression: " + n1 + " " + operandInt + " " + n2 + " = " + String(calcFunc(number1: n1, number2: n2, operand:operandInt)))
+    if let n1 = Int(n1){
+        return n1
+    }else{
+        print("Unexepted error: Check your number")
+        exit(0)
+    }
 }
-initicalize()
+
+func getOperandFromConsole() -> String{
+    print("Select operation type: +, -, *, /")
+    let operand:String = readLine() ?? ""
+    return operand
+}
+
+func showResult( _ operand:String, _ n1:Int?, _ n2:Int?){
+    let result  = calcFunc(n1, n2, operand)
+    if let result = result{
+        print("Your expresion: " + String(n1!) + " " + operand + " " + String(n2!) + " = " + String(result))
+    }
+}
+
+
+print("Wellcome to SimpleCalc " + version)
+showResult(getOperandFromConsole(),getValueFromConsole(), getValueFromConsole())
+
